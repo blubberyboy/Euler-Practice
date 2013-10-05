@@ -23,24 +23,20 @@ first_sunday = 0
 (1900..2000).each do |year|
 	leap_year = false
 		
-	if year % 4 == 0
+	leap_year = year % 4 == 0 &&
+		year % 100 == 0 &&
+		year % 400 == 0 ||
+		year % 100 != 0? 
+		true : false
 			
-		if year % 100 == 0 and year % 400 == 0
-			
-			leap_year = true
-		elsif year % 100 != 0
-			
-			leap_year = true
-		end
-	end
-	if leap_year == true
+	if leap_year
 		
 		current_year = leap_year_months
 	else
 		
 		current_year = non_leap_year_months
 	end
-		
+			
 	current_year.each do |month|
 			
 		(1..month).each do |day|
@@ -49,11 +45,13 @@ first_sunday = 0
 					
 				current_day = 0
 			else
-					
+				
 				current_day += 1
 			end
 					
-			if day == 1 and current_day == 6 and year != 1900
+			if day == 1 && 
+				current_day == 6 &&
+				year != 1900
 				
 				first_sunday += 1
 			end

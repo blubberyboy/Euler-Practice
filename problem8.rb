@@ -21,3 +21,28 @@ grid = "73167176531330624919225119674426574742355349194934
 05886116467109405077541002256983155200055935729725
 71636269561882670428252483600823257530420752963450"
 
+grid_split = []
+each_number = []
+grid_split = grid.split("\n")
+current_largest = 0
+
+grid_split.each do |each_line|
+	
+
+	each_number = each_line.split("")
+	
+	(0..each_number.length - 5).each do |x|
+		
+		product = 1
+		for i in 1..5
+			
+			product *= each_number[x + i].to_i
+		end
+		
+		if current_largest < product
+			
+			current_largest = product
+		end
+	end
+end
+puts current_largest

@@ -2,26 +2,37 @@
 
 #What is the smallest positive number that is evenly divisible by all of the numbers from 1 to 20?
 
-start = 20
+class Integer
+	
+	def divisible?
+		
+		(2..20).each do |x|
+			
+			if self % x != 0
+				
+				return false
+			end
+		end
+		return true
+	end
+		
+end
+	
+start = 2520
 
 loop do
 
-	smallest_multiple = true
-	(11..20).each do |x|
-		
-		if start % x != 0
-		
-			smallest_multiple = false
-			break
-		end
-	end
-	puts smallest_multiple
-	if smallest_multiple
+	if start.divisible?
 		
 		puts start
 		exit
 	else
-		
+	
 		start += 20
+	end
+
+	if start % 1000 == 0
+		
+		puts start
 	end
 end

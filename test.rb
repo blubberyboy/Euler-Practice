@@ -1,15 +1,16 @@
-sum = 0
+j = true
+i = 0
 
-(0..100).each do |x|
-	
-	(0..100).each do |y|
-	
-		sum += y.to_i
-		if x == 10
-			break
-			break
-		end
+until i == 10 || j == false
+
+	if i == 5
+		
+		j == false
 	end
-	puts x
+	puts "hi"
+	i += 1
 end
-	puts sum
+
+#puts (0..1000).map { |d| 
+#	(1..d).detect(lambda{0}) { |t| (10**t % d) == 1 } 
+#}.each_with_index.max[1]

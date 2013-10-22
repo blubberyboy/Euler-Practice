@@ -4,4 +4,27 @@
 
 #What is the total of all the name scores in the file?
 
-file = File.open("name.txt", 'r')
+file = File.open("names.txt", 'r')
+names = file.gets.split(",")
+names.map! {|x| x.gsub("\"", "")}
+names.sort!
+puts names
+letters =[]
+sub_total = 0
+count = 1
+final_total = 0
+
+names.each do |name|
+	
+	sub_total = 0
+	letters = []
+
+	(0..name.length - 1).each do |x|
+		
+		sub_total += name[x].ord - 64
+	end
+	final_total += sub_total * count
+	count += 1
+end
+
+puts final_total

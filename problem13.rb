@@ -107,4 +107,4 @@ grid_lines.each do |x|
 	
 	sum += x.to_i
 end
-puts sum.to_s[0..10]
+puts sum.to_s[0..9]

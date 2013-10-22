@@ -15,43 +15,28 @@
 
 #What is the value of the first triangle number to have over five hundred divisors?
 
-def factors(x)
-	
-	count = 0
-	(1..x**0.5).each do |y|
+x = 1
+
+catch (:done) do
+	loop do
+		div_count = 0
+		sum = 0
+		x += 1
+		(1..x).each do |y|
 		
-		if x % y == 0 && 
-			y == x * 0.5
+			sum += y
+		end
+	
+		(1..sum).each do |z|
+		
+			if sum % z == 0
 			
-			count += 1
-		elsif x % y == 0
-			
-			count += 2
+				div_count += 1
+			end
+		end
+		if div_count > 200
+			puts sum
+			throw :done
 		end
 	end
-	
-	return count
 end
-
-def triangle(x)
-	
-	sum = 0
-	
-	(1..x).each do |y|
-		
-		sum += y
-	end
-	return sum
-end
-
-total_factors = 0
-start = 1
-while total_factors < 500
-	
-	perfect_triangle = triangle(start)
-	total_factors = factors(perfect_triangle)	
-	start += 1
-	puts total_factors
-end
-
-puts perfect_triangle

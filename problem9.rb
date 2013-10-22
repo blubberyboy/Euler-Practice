@@ -14,7 +14,7 @@
 		
 		if a + b + c == 1000
 		
-			puts a, b, c
+			puts a * b * c
 			exit
 		end
 	end

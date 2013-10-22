@@ -39,5 +39,5 @@ longest_chain_num = 0
 		longest_chain_num = 1000001 - x
 	end
 end
-puts longest_chain
+
 puts longest_chain_num

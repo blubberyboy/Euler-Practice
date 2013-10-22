@@ -6,7 +6,7 @@
 
 y = 1
 x = 2
-sum = 0
+sum = 2
 
 while x <= 4000000
 	
